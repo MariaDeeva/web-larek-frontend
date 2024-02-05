@@ -236,13 +236,13 @@ interface IEvents {\
     on<T extends object>(event: EventName, callback: (data: T) => void): void;\
     emit<T extends object>(event: string, data?: T): void;\
     trigger<T extends object>(event: string, context?: Partial<T>): (data: T) => void;\
-  };\
+  };
 
 Тип данных ответа от сервера\
 type ApiListResponse<Type> = {\
     total: number, \
     items: Type[] \
-};\
+};
 
 Тип методов запросов к серверу\
 type ApiPostMethods = 'POST' | 'PUT' | 'DELETE';\
@@ -251,12 +251,12 @@ type ApiPostMethods = 'POST' | 'PUT' | 'DELETE';\
 interface IFormState {\
     valid: boolean;\
     errors: string[];\
-};\
+};
 
 Интерфейс модальных данных\
 interface IModalData {\
     content: HTMLElement;\
-};\
+};
 
 Интерфейс состояния приложения\
 interface IAppState {\
@@ -266,32 +266,32 @@ interface IAppState {\
   delivery: IOrderForm | null;\
   contact: IContactForm | null;\
   order: IOrder | null;\
-};\
+};
 
 Интерфейс продукта(товара)\
-interface IProduct {\
+`interface IProduct {\
   id: string;\
   title: string;\
   price: number | null;\
   description: string;\
   category: string;\
   image: string;\
-};\
+};`
 
 Интерфейс формы заказов\
- interface IOrderForm {\
+ `interface IOrderForm {\
   payment: string;\
   address: string;\
-};\
+};`
 
 Интерфейс формы контактов\
- interface IContactForm {\
+ `interface IContactForm {\
   email: string;\
   phone: string;\
-};\
+};`
 
 Интерфейс карточки товара\
 interface ICards extends IProduct{\
   index?: string;\
   buttonTitle? : string;\
-};\
+};
