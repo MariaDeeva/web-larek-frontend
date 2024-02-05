@@ -26,12 +26,12 @@ export class OrderForm extends Form<IOrderForm> {
       this._paymentCashButton.addEventListener('click', onClick);
     }
   }
+  set address(value: string) {
+    (this.container.elements.namedItem('address') as HTMLInputElement).value = value;
+  }
 
   toggleButtons(toggleOn: HTMLElement) {
     this._paymentCardButton.classList.toggle('button_alt-active', toggleOn === this._paymentCardButton);
     this._paymentCashButton.classList.toggle('button_alt-active', toggleOn === this._paymentCashButton);
-  }
-  set address(value: string) {
-    (this.container.elements.namedItem('address') as HTMLInputElement).value = value;
   }
 }

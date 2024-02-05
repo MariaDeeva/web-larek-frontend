@@ -133,7 +133,7 @@ events.on(/^order\..*:change/, (data: { field: keyof IOrderForm, value: string }
   appData.setOrderField(data.field, data.value)
 })
 
-events.on(/^contactsElm\..*:change/, (data: { field: keyof IContactForm, value: string }) => {
+events.on(/^contacts\..*:change/, (data: { field: keyof IContactForm, value: string }) => {
   appData.setContactField(data.field, data.value)
 })
 
@@ -232,7 +232,7 @@ events.on('contact:ready', () => {
   contact.valid = true;
 })
 
-events.on('contactsElm:submit', handleOrderSubmit);
+events.on('contacts:submit', handleOrderSubmit);
 // Функция обработчика события открытия модального окна
 function handleModalOpen() {
   pageContainer.locked = true;
