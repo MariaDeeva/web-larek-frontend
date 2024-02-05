@@ -269,26 +269,26 @@ interface IAppState {\
 };
 
 Интерфейс продукта(товара)\
-`interface IProduct {\
+interface IProduct {\
   id: string;\
   title: string;\
   price: number | null;\
   description: string;\
   category: string;\
   image: string;\
-};`
+};
 
 Интерфейс формы заказов\
- `interface IOrderForm {\
+ interface IOrderForm {\
   payment: string;\
   address: string;\
-};`
+};
 
 Интерфейс формы контактов\
- `interface IContactForm {\
+ interface IContactForm {\
   email: string;\
   phone: string;\
-};`
+};
 
 Интерфейс карточки товара\
 interface ICards extends IProduct{\
