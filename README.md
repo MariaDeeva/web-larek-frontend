@@ -111,7 +111,7 @@ yarn build
 
 ### 1. Класс `Product`
 Данный класс является описывает модель продукта и наследует функциональность от класса Model, использует интерфейс IProduct для указания типа данных, 
-которые должны соответствовать модели товара. (Находится в src\components\AppState.ts)
+которые должны соответствовать модели товара. <u>(Находится в src\components\AppState.ts)</u>
 Он содержит свойство: 
 1. Свойство id: string - строковое значение, представляющее идентификатор продукта.
 2. Свойство description: string - строковое значение, содержащее описание продукта.
@@ -232,65 +232,66 @@ yarn build
 
 ## Основные типы данных 
 Интерфейс общего методы события\
-interface IEvents {
-    on<T extends object>(event: EventName, callback: (data: T) => void): void;
-    emit<T extends object>(event: string, data?: T): void;
-    trigger<T extends object>(event: string, context?: Partial<T>): (data: T) => void;
-  }
+interface IEvents {\
+    on<T extends object>(event: EventName, callback: (data: T) => void): void;\
+    emit<T extends object>(event: string, data?: T): void;\
+    trigger<T extends object>(event: string, context?: Partial<T>): (data: T) => void;\
+  };\
 
-Тип данных ответа от сервера
-type ApiListResponse<Type> = {
-    total: number, 
-    items: Type[] 
-};
+Тип данных ответа от сервера\
+type ApiListResponse<Type> = {\
+    total: number, \
+    items: Type[] \
+};\
 
-Тип методов запросов к серверу
-type ApiPostMethods = 'POST' | 'PUT' | 'DELETE';
+Тип методов запросов к серверу\
+type ApiPostMethods = 'POST' | 'PUT' | 'DELETE';\
 
-Интерфейс обработчика валидности формы
-interface IFormState {
-    valid: boolean;
-    errors: string[];
-}
-Интерфейс модальных данных
-interface IModalData {
-    content: HTMLElement;
-}
+Интерфейс обработчика валидности формы\
+interface IFormState {\
+    valid: boolean;\
+    errors: string[];\
+};\
 
-Интерфейс состояния приложения
-interface IAppState {
-  catalog: IProduct[];
-  basket: IProduct[];
-  preview: string | null;
-  delivery: IOrderForm | null;
-  contact: IContactForm | null;
-  order: IOrder | null;
-}
+Интерфейс модальных данных\
+interface IModalData {\
+    content: HTMLElement;\
+};\
 
-Интерфейс продукта(товара)
-interface IProduct {
-  id: string;
-  title: string;
-  price: number | null;
-  description: string;
-  category: string;
-  image: string;
-}
+Интерфейс состояния приложения\
+interface IAppState {\
+  catalog: IProduct[];\
+  basket: IProduct[];\
+  preview: string | null;\
+  delivery: IOrderForm | null;\
+  contact: IContactForm | null;\
+  order: IOrder | null;\
+};\
 
-Интерфейс формы заказов
- interface IOrderForm {
-  payment: string;
-  address: string;
-}
+Интерфейс продукта(товара)\
+interface IProduct {\
+  id: string;\
+  title: string;\
+  price: number | null;\
+  description: string;\
+  category: string;\
+  image: string;\
+};\
 
-Интерфейс формы контактов
- interface IContactForm {
-  email: string;
-  phone: string;
-}
+Интерфейс формы заказов\
+ interface IOrderForm {\
+  payment: string;\
+  address: string;\
+};\
 
-Интерфейс карточки товара
-interface ICards extends IProduct{
-  index?: string;
-  buttonTitle? : string;
-}
+Интерфейс формы контактов\
+ interface IContactForm {\
+  email: string;\
+  phone: string;\
+};\
+
+Интерфейс карточки товара\
+interface ICards extends IProduct{\
+  index?: string;\
+  buttonTitle? : string;\
+};\
